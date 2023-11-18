@@ -17,21 +17,6 @@ One of the most challenging jobs for sports coaches is deciding which players wi
 Here we ask if we can use a machine learning model to classify players by their potential given their attributes. Answering this question is important as developing a model that can accurately predict the potential of players on FIFA22 could then be applied to the evaluation of soccer players in real life and be employed by coaches and scouts to help soccer clubs make good decisions on which players to add to the team and which to let go.     
 
 
-### Methods
-
-#### Data
-
-
-
-#### Analysis
-
-
-
-
-### Results & Discussion
-
-
-
 ## Methods
 ### Data
 The data used in this analysis are from the video game FIFA22 by EA Sports. 
@@ -43,6 +28,9 @@ Each row of the dataset corresponds to a single player, and contains biometric i
 
 
 ### Analysis
+
+
+### Results & Discussion
 
 
 #### References
