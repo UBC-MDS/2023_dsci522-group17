@@ -10,4 +10,6 @@ dependencies:
   - scikit-learn
   - vegafusion
   - vl-convert-python[version='>=0.14.0']
+  - jupyter_contrib_nbextensions
 prefix: /Users/meretelutz/miniconda3/envs/fifa_potential
+ 
