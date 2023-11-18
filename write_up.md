@@ -6,9 +6,9 @@ by Simon Frew, Waleed Mahmood, Merete Lutz & Jake Barnabe
 
 ### Summary
 
-We attempt to construct a classification model using an RBF SVM classifier algorithm which uses FIFA22 player attribute ratings to classify players' potential 
+We attempt to construct a classification model using an RBF SVM classifier algorithm which uses FIFA22 player attribute ratings to classify players' potential with target categories "Low", "Medium", "Good", and "Great". The categories are split on the quartiles of the distribution of the FIFA22 potential ratings.
 
-with target categories "Low", "Medium", "Good", and "Great". The categories are split on the quartiles of the FIFA22 potential ratings distribution. 
+  
 
 ### Introduction
 
@@ -17,7 +17,18 @@ One of the most challenging jobs for sports coaches is deciding which players wi
 Here we ask if we can use a machine learning model to classify players by their potential given their attributes. Answering this question is important as developing a model that can accurately predict the potential of players on FIFA22 could then be applied to the evaluation of soccer players in real life and be employed by coaches and scouts to help soccer clubs make good decisions on which players to add to the team and which to let go.     
 
 
+### Methods
 
+#### Data
+
+
+
+#### Analysis
+
+
+
+
+### Results & Discussion
 
 
 
