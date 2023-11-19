@@ -19,12 +19,10 @@ Here we ask if we can use a machine learning model to classify players by their 
 
 ## Methods
 ### Data
-The data used in this analysis are from the video game FIFA22 by EA Sports. 
-The data were downloaded with authentication from [Kaggle](https://www.kaggle.com/datasets/stefanoleone992/fifa-22-complete-player-dataset) and without authentication from [Sports-Statistics.com](https://sports-statistics.com/sports-data/fifa-2022-dataset-csvs/). 
-Within documentation, these were were scraped from a publicly available website (https://sofifa.com/) with a permissive `robots.txt`. 
+The data used in this analysis are from the video game FIFA22 by EA Sports. The data were downloaded with authentication from [Kaggle](https://www.kaggle.com/datasets/stefanoleone992/fifa-22-complete-player-dataset) and without authentication from [Sports-Statistics.com](https://sports-statistics.com/sports-data/fifa-2022-dataset-csvs/). Within documentation, these were were scraped from a publicly available website (https://sofifa.com/) with a permissive `robots.txt`. 
 
 
-Each row of the dataset corresponds to a single player, and contains biometric information, ratings for various skills, like shooting accuracy, passing, dribbling, and player wages. 
+Each row of the dataset corresponds to a single player, and contains biometric information, ratings for various skills, like shooting accuracy, passing, dribbling, and player wages and market value. 
 
 
 ### Analysis
