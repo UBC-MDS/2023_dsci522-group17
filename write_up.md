@@ -42,7 +42,7 @@ To improve our model further in the future, with the hopes of better predicting 
 
 
 #### References
-https://ussoccerplayers.com/soccer-training-tips/evaluating-players (US National Soccer Players, 2023)
+US National Soccer Players. (2023). (rep.). How to evaluate soccer players. Retrieved from https://ussoccerplayers.com/soccer-training-tips/evaluating-players. 
 
 Harris, C.R. et al., 2020. Array programming with NumPy. Nature, 585, pp.357–362.
 
