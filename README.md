@@ -45,3 +45,17 @@ This report is licensed under a Attribution-NonCommercial-NoDerivs 4.0 Internati
 
 ## References
 This README file references https://github.com/ttimbers/breast_cancer_predictor_py/tree/main. 
+
+US National Soccer Players. (2023). (rep.). How to evaluate soccer players. Retrieved from https://ussoccerplayers.com/soccer-training-tips/evaluating-players. 
+
+Harris, C.R. et al., 2020. Array programming with NumPy. Nature, 585, pp.357–362.
+
+McKinney, Wes. 2010. “Data Structures for Statistical Computing in Python.” In Proceedings of the 9th Python in Science Conference, edited by Stéfan van der Walt and Jarrod Millman, 51–56.
+
+Pauli Virtanen, et al., and SciPy 1.0 Contributors. (2020) SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python. Nature Methods, 17(3), 261-272.
+
+Pedregosa, F. et al., 2011. Scikit-learn: Machine learning in Python. Journal of machine learning research, 12(Oct), pp.2825–2830.
+
+VanderPlas et al., (2018). Altair: Interactive Statistical Visualizations for Python. Journal of Open Source Software, 3(32), 1057, https://doi.org/10.21105/joss.01057
+
+Van Rossum, Guido, and Fred L. Drake. 2009. Python 3 Reference Manual. Scotts Valley, CA: CreateSpace.
