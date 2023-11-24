@@ -1,4 +1,4 @@
-FROM quay.io/jupyter/minimal-notebook:python-3.11
+FROM --platform=linux/amd64 quay.io/jupyter/minimal-notebook:python-3.11
 
 # Set user to root for sudo permissions
 USER root 
