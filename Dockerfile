@@ -8,12 +8,17 @@ RUN apt-get update --yes && \
     apt-get upgrade --yes 
 
 # Copy git repository contents into home container
-COPY . /home/jovyan/fifa_potential
+COPY --chown=${NB_UID} . /home/jovyan/fifa_potential
+
+WORKDIR /home/jovyan/fifa_potential
 
 # Update conda & install environment 
 RUN conda update -n base conda && \
     conda config --set solver libmamba && \ 
+    conda install nb_conda_kernels=2.3.1 && \ 
     conda env create -f environment.yaml
 
+WORKDIR /home/jovyan
+
 # Change back to default user
-# USER ${NB_UID}
+USER ${NB_UID}
