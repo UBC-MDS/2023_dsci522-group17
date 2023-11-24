@@ -4,7 +4,23 @@ from sklearn.preprocessing import StandardScaler
 
 # Create the function to modularize the preprocessor block
 def preprocessor(passthrough_feats, numeric_feats):
-    """Takes lists of numeric and passthrough"""
+    """Takes lists of numeric and passthrough features and creates a column transformer,
+    'fifa_preprocessor' that runs StandardScaler on the numeric features, and 
+    passes through the passthrough features.
+
+    Parameters
+    ----------
+    passthrough_feats : 
+        list of passthrough feature column names
+
+    numeric_feats :
+        list of numeric feature column names
+
+    Returns
+    -------
+    fifa_preprocessor
+        a column transformer object
+    """
     fifa_preprocessor = make_column_transformer(
     ("passthrough", passthrough_feats),
     (StandardScaler(), numeric_feats), 
