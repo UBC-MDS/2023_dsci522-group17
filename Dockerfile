@@ -8,9 +8,9 @@ RUN apt-get update --yes && \
     apt-get upgrade --yes 
 
 # Copy git repository contents into home container
-COPY --chown=${NB_UID} . /home/jovyan/fifa_potential
+COPY --chown=${NB_UID} . /home/jovyan/fifa-potential
 
-WORKDIR /home/jovyan/fifa_potential
+WORKDIR /home/jovyan/fifa-potential
 
 # Update conda & install environment 
 RUN conda update -n base conda && \
