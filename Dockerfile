@@ -1,6 +1,7 @@
 FROM --platform=linux/amd64 quay.io/jupyter/minimal-notebook:python-3.11
 # Comment to test trigger GitHub Workflows
 
+
 # Set user to root for sudo permissions
 USER root 
 
