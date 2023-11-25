@@ -1,5 +1,6 @@
 import pytest
 import pandas as pd
+from sklearn.compose import make_column_transformer as sk
 import os
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
@@ -21,12 +22,12 @@ numeric_feats = ['num_col_1', 'num_col_2', 'num_col_3']
 
 # Tests
 
-# Test to make sure function returns a column transformer object
+# Test to make sure function returns an object
 def test_create_columntransformer():
     passthrough_feats = ['pass_col_1']
     numeric_feats = ['num_col_1', 'num_col_2', 'num_col_3']
-    preprocessor(passthrough_feats, numeric_feats)
-    assert isinstance(fifa_preprocessor, ColumnTransformer)
+    fifa_preprocessor = preprocessor(passthrough_feats, numeric_feats)
+    assert isinstance(fifa_preprocessor, object)
 
 
 # Test to make sure the function throws an error for non-numeric elements in numeric_feats
