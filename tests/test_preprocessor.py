@@ -1,4 +1,5 @@
 import pytest
+import sklearn
 import pandas as pd
 import os
 import sys
@@ -26,7 +27,7 @@ def test_create_columntransformer():
     passthrough_feats = ['pass_col_1']
     numeric_feats = ['num_col_1', 'num_col_2', 'num_col_3']
     fifa_preprocessor = preprocessor(passthrough_feats, numeric_feats)
-    assert isinstance(fifa_preprocessor, object)
+    assert isinstance(fifa_preprocessor, sklearn.compose._column_transformer.ColumnTransformer)
 
 
 # Test to make sure the function throws an error for non-numeric elements in numeric_feats
