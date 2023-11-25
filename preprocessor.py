@@ -30,8 +30,14 @@ def preprocessor(passthrough_feats, numeric_feats):
     
 
     # Check to make sure the elements of numeric_feats are numeric
+    for element in numeric_feats:
+        if not isinstance(element, (int, float)):
+            raise ValueError("numeric_feats must contain only numeric elements")
+        
     
-
+    # Raise an error if numeric_feats is empty
+    if len(numeric_feats) == 0:
+        raise ValueError('numeric_feats is empty')
 
     # Create the column transformer
     fifa_preprocessor = make_column_transformer(
