@@ -1,6 +1,5 @@
 import pytest
 import pandas as pd
-from sklearn.compose import make_column_transformer as sk
 import os
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
