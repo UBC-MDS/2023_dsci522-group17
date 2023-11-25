@@ -30,9 +30,9 @@ def download_unpack_zip_extract_csv(url, filename, path="data"):
     if not isinstance(filename, str):
         raise TypeError("Input `filename` must be type string")
 
-    try: 
+    try:
         request = requests.get(url)
-    except: 
+    except:
         raise NameError("Input `url` is not a valid URL")
 
     # Test: Check if url input string is a valid URL
@@ -42,17 +42,8 @@ def download_unpack_zip_extract_csv(url, filename, path="data"):
     with open(os.path.join("data", "tmp.zip"), "wb") as f:
         f.write(request.content)
 
-    # Test: Check if url downloads a valid zip file
     with zipfile.ZipFile(os.path.join("data", "tmp.zip"), "r") as zip_file:
-        if zip_file.testzip() is not None:
-            raise TypeError("Zip file is not valid")
-
-    # Test: Ensure target filename is extracted successfully
-    try:
-        with zipfile.ZipFile(os.path.join("data", "tmp.zip"), "r") as zip_file:
-            zip_file.extract(filename, path=path)
-        os.remove(os.path.join(path, "tmp.zip"))
-    except:
-        raise ValueError("Target csv not found within zip file")
+        zip_file.extract(filename, path=path)
+    os.remove(os.path.join(path, "tmp.zip"))
 
     return pd.read_csv(os.path.join(path, filename), encoding="utf-8", low_memory=False)

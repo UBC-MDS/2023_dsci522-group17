@@ -1,5 +1,6 @@
 import os
 import sys
+import zipfile
 
 # Referenced from https://github.com/ttimbers/breast_cancer_predictor_py/blob/main/tests/test_read_zip.py
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
@@ -23,10 +24,13 @@ def test_url_exists():
         download_unpack_zip_extract_csv("my_string?", "string")
 
 
-# # Test: Check if url downloads a valid zip file
-# def test_url_valid():
-#     with pytest.raises(TypeError):
-#         download_unpack_zip_extract_csv("URL_TO_not_a_zip_file.md", "string")
+# Test: Check if url downloads a valid zip file
+def test_url_valid():
+    with pytest.raises(zipfile.BadZipFile):
+        download_unpack_zip_extract_csv(
+            "https://raw.githubusercontent.com/UBC-MDS/fifa-potential/preprocessing-tests/tests/test_data/not_a_zip_file.md", 
+            "string"
+        )
 
 
 # # Test: Check if filename inside zip is correct
