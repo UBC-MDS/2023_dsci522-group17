@@ -1,4 +1,4 @@
-# Predicting Athletic Potential of Youth Soccer Athletes
+# Predicting Athletic Potential of FIFA Athletes
 
 ## Contributors:
 - Jake Barnabe
@@ -12,30 +12,67 @@ The classes are split on the quartiles of the distribution of the FIFA22 potenti
 Our model performed reasonably well on the test data with an accuracy score of 0.84, with hyperparamters C: 100 & Gamma: 0.01. 
 However, we believe there is still significant room for improvement before the model is ready to be utilized by soccer clubs and coaching staffs to predict the potential of players on the field instead of on the screen. 
 
-## Usage
-
-If this is your first time running our project,
-run the following from the root of this repository:
-
-``` bash
-conda env create --file environment.yml
-```
-
-To run the analysis, run the following from the root of this repository:
-
-``` bash
-conda activate fifa-potential
-jupyter lab 
-```
-
-Open `high-potential-fifa-prediction-report.ipynb` in Jupyter Lab
-and under the "Kernel" menu click "Restart Kernel and Run All Cells...".
-
 ## Dependencies
 
-- `conda` (version 23.9.0 or higher)
-- `nb_conda_kernels` (version 2.3.1 or higher)
-- Python and packages listed in [`environment.yml`](environment.yml)
+- [Docker](https://www.docker.com/) is a container used 
+to manage the software dependencies for this project.
+The Docker image used for this project is based on the
+`quay.io/jupyter/minimal-notebook` image.
+Additional dependencies are specified int the [`Dockerfile`](Dockerfile).
+
+## Usage
+
+### Setup
+
+1. [Install](https://www.docker.com/get-started/) 
+and launch Docker on your computer.
+
+2. Clone this GitHub repository.
+
+#### Running the analysis
+
+1. Navigate to the root of this project on your computer using the
+   command line and enter the following command:
+
+``` 
+docker compose up
+```
+
+2. In the terminal, look for a URL that starts with 
+`http://127.0.0.1:8888/lab?token=` 
+Copy and paste that URL into your browser.
+
+3. To run the analysis, open `src/high-potential-fifa-prediction-report.ipynb`
+in the Jupyter Lab window you just launched, and under the "Kernel" menu
+click "Restart Kernel and Run All Cells..."
+
+#### Clean up
+
+1. To shut down the container and clean up the resources, 
+type `Cntrl` + `C` in the terminal
+where you launched the container, and then type `docker compose rm`
+
+## Developer notes
+
+#### Adding a new dependency
+
+1. Add the dependency to the `Dockerfile` file on a new branch.
+
+2. Re-build the Docker image locally to ensure it builds and runs properly.
+
+3. Push the changes to GitHub. A new Docker
+   image will be built and pushed to Docker Hub automatically.
+   It will be tagged with the SHA for the commit that changed the file.
+
+4. Update the `docker-compose.yml` file on your branch to use the new
+   container image (make sure to update the tag specifically).
+
+5. Send a pull request to merge the changes into the `main` branch. 
+
+#### Running the tests
+Tests are run using the `pytest` command in the root of the project.
+More details about the test suite can be found in the 
+[`tests`](tests) directory.
 
 
 ## Licenses
