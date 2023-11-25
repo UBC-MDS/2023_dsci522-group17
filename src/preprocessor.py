@@ -22,17 +22,11 @@ def preprocessor(passthrough_feats, numeric_feats):
         a column transformer object
     """
     # Check to make sure both parameters are lists otherwise raise a type error
-    if not isinstance(passthrough_feats, 'list'):
+    if not isinstance(passthrough_feats, list):
         raise TypeError('passthrough_feats must be a list')
     
-    if not isinstance(numeric_feats, 'list'):
+    if not isinstance(numeric_feats, list):
         raise TypeError('numeric_feats must be a list') 
-    
-
-    # Check to make sure the elements of numeric_feats are numeric
-    for element in numeric_feats:
-        if not isinstance(element, (int, float)):
-            raise ValueError("numeric_feats must contain only numeric elements")
         
     
     # Raise an error if numeric_feats is empty
