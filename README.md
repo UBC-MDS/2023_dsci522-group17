@@ -49,7 +49,7 @@ click "Restart Kernel and Run All Cells..."
 #### Clean up
 
 1. To shut down the container and clean up the resources, 
-type `Cntrl` + `C` in the terminal
+type `Ctrl` + `C` in the terminal
 where you launched the container, and then type `docker compose rm`
 
 ## Developer notes
