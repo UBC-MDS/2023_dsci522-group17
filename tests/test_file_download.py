@@ -28,7 +28,7 @@ def test_url_exists():
 def test_url_valid():
     with pytest.raises(zipfile.BadZipFile):
         download_unpack_zip_extract_csv(
-            "https://raw.githubusercontent.com/UBC-MDS/fifa-potential/preprocessing-tests/tests/test_data/not_a_zip_file.md",
+            "https://raw.githubusercontent.com/UBC-MDS/fifa-potential/main/tests/test_data/not_a_zip_file.md",
             "string",
         )
 
@@ -37,7 +37,7 @@ def test_url_valid():
 def test_csv_in_zip():
     with pytest.raises(KeyError):
         download_unpack_zip_extract_csv(
-            "https://github.com/UBC-MDS/fifa-potential/raw/preprocessing-tests/tests/test_data/this_is_a_zip_file.zip",
+            "https://github.com/UBC-MDS/fifa-potential/raw/main/tests/test_data/this_is_a_zip_file.zip",
             "string",
         )
 
@@ -45,7 +45,7 @@ def test_csv_in_zip():
 # Test: Check if downloaded csv is valid
 def test_csv_valid():
     assert download_unpack_zip_extract_csv(
-        "https://github.com/UBC-MDS/fifa-potential/raw/preprocessing-tests/tests/test_data/this_is_a_zip_file.zip",
+        "https://github.com/UBC-MDS/fifa-potential/raw/main/tests/test_data/this_is_a_zip_file.zip",
         "this_is_a_csv_file.csv",
     ).equals(
         pd.read_csv(
