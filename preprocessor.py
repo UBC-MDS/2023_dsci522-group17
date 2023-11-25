@@ -21,22 +21,26 @@ def preprocessor(passthrough_feats, numeric_feats):
     fifa_preprocessor
         a column transformer object
     """
+    # Check to make sure both parameters are lists otherwise raise a type error
+    if not isinstance(passthrough_feats, 'list'):
+        raise TypeError('passthrough_feats must be a list')
+    
+    if not isinstance(numeric_feats, 'list'):
+        raise TypeError('numeric_feats must be a list') 
+    
+
+    # Check to make sure the elements of numeric_feats are numeric
+    
+
+
+    # Create the column transformer
     fifa_preprocessor = make_column_transformer(
     ("passthrough", passthrough_feats),
     (StandardScaler(), numeric_feats), 
     )
     return fifa_preprocessor
 
-# Create test data to test the function
 
-test_data = pd.DataFrame({
-    'num_col_1': [1, 2, 3, 4, 5],
-    'num_col_2': [6, 7, 8, 9, 10],
-    'pass_col_1': ['jake', 'merete', 'simon', 'waleed', 'tiffany'],
-    'num_col_3': [100, 200, 300, 400, 500]
-})
-
-#Create test cases
 
 
 
