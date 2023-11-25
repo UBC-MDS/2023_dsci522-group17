@@ -39,10 +39,10 @@ def plot_numeric_distributions(data, target, numeric_features=None, stack_order=
         if not isinstance(numeric_features, list):
             raise TypeError('numeric_features must be a list') 
 
-        # Check to make sure the elements of numeric_features are of datatype numeric
+        # Check to make sure the elements of numeric_features are of datatype string
         for element in numeric_features:
-            if not isinstance(element, (int, float)):
-                raise ValueError("numeric_feats must contain only numeric elements")
+            if not isinstance(element, str):
+                raise ValueError("numeric_feats must contain only string elements")
 
 
     # Creating the repeated altair plot
