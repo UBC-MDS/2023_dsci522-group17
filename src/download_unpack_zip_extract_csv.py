@@ -7,7 +7,7 @@ import pandas as pd
 
 def download_unpack_zip_extract_csv(url, filename, path="data"):
     """
-    download, unzip and unpack source data
+    download, unzip and unpack a specific csv from an online zip file
 
     Parameters
     ----------
