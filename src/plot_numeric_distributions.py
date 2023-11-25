@@ -40,7 +40,7 @@ def plot_numeric_distributions(data, target, numeric_features=None, stack_order=
             raise TypeError('numeric_features must be a list') 
 
         # Check to make sure the elements of numeric_features are of datatype numeric
-        for element in numeric_feats:
+        for element in numeric_features:
             if not isinstance(element, (int, float)):
                 raise ValueError("numeric_feats must contain only numeric elements")
 
