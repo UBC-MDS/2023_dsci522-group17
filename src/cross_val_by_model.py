@@ -53,8 +53,7 @@ def cross_val_by_model(model_dict, X_train, y_train):
         raise TypeError("model_dict values must be objects")
     if not isinstance(X_train, pd.core.frame.DataFrame):
         raise TypeError("X_train must be a pandas DataFrame")
-    if not isinstance(y_train, pd.core.frame.DataFrame):
-        raise TypeError("y_train must be a pandas DataFrame")
+    
 
     results = pd.DataFrame()
     for name, model in model_dict.items():
