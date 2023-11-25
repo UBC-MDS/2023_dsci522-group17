@@ -9,32 +9,53 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_validate
 
-# Test data
-X_train = pd.DataFrame(np.ones((200,1))).rename(columns = {0:'feature'})
-y_train = pd.DataFrame([['yes']*100+['no']*100]).T.rename(columns = {0:'target'})
+
+# The below model is adapted from DSCI_571's mean_std_cross_val_scores() found here:
+# https://pages.github.ubc.ca/MDS-2023-24/DSCI_571_sup-learn-1_students/lectures/02_ml-fundamentals.html?highlight=mean_std_cross_val_scores
 
 
-model_dict = {
-    "dummy": DummyClassifier(random_state=123), 
-    # "Decision Tree": DecisionTreeClassifier(random_state=123),
-    # "KNN": KNeighborsClassifier(),
-    # "RBF SVM": SVC(random_state=123),
-    # "Naive Bayes": GaussianNB(),
-    # "Logistic Regression": LogisticRegression(max_iter=2000, multi_class="ovr", random_state=123),
-}
+def cross_val_by_model(model_dict, X_train, y_train):
+    """
+    Returns a data frame of cross-validation scores for 
+    each model passed to the function in a dictionary.
 
-def cross_val_by_model(model_dict, X_train, y_train, **kwargs):
-    #Returns a data frame of cross-validation scores for each model passed to the function in a dictionary.
-
-    #Parameters:
-    #   model_dict (dict): A dictionary containing models to be run.
-    #   It should have the following key-value pairs:
-    #   - 'name': (str) The name of the model
-    #   - 'X': (idk) code initializing the model    
-
-    #Returns:
-    #    results (pd.DataFrame): A dataframe containing the resulf from the cross-validation  
-
+    Parameters
+    ----------
+    model_dict : dict
+        A dictionary containing models to be run. It 
+        should have the following key-value pairs:
+        - key: (str) the name of a model
+        - value: (object) the initialization of the model
+    X_train : pandas DataFrame
+        A pandas dataframe of the training data without the
+        target class
+    y_train : pandas DataFrame
+        A pandas dataframe of the target class from the
+        training data
+    
+    Returns
+    -------
+    results
+        a pandas dataframe containing the resulf from 
+        the cross-validation 
+    
+    Raises
+    ------
+    TypeError
+        when a the parameters passed are not the correct
+        data type/instance
+    """
+    if not isinstance(model_dict, dict):
+        raise TypeError('model_dict must be a dictionary')
+    if not isinstance(list(model_dict.items())[0][0], str):
+        raise TypeError('model_dict keys must be strings')
+    if not isinstance(list(model_dict.items())[0][1], object):
+        raise TypeError('model_dict values must be objects')
+    if not isinstance(X_train, pd.core.frame.DataFrame):
+        raise TypeError('X_train must be a pandas DataFrame')
+    if not isinstance(y_train, pd.core.frame.DataFrame):
+        raise TypeError('y_train must be a pandas DataFrame')
+    
     results = pd.DataFrame()
     for name, model in model_dict.items():
         scores = cross_validate(model, X_train, y_train, return_train_score=True)
@@ -46,8 +67,5 @@ def cross_val_by_model(model_dict, X_train, y_train, **kwargs):
         for i in range(len(mean_scores)):
             out_col.append((f"%0.3f (+/- %0.3f)" % (mean_scores[i], std_scores[i])))
 
-        
         results[name] = pd.Series(data=out_col, index=mean_scores.index)
     return results
-
-cross_val_by_model(model_dict, X_train, y_train)
