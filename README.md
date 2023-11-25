@@ -12,6 +12,10 @@ The classes are split on the quartiles of the distribution of the FIFA22 potenti
 Our model performed reasonably well on the test data with an accuracy score of 0.84, with hyperparamters C: 100 & Gamma: 0.01. 
 However, we believe there is still significant room for improvement before the model is ready to be utilized by soccer clubs and coaching staffs to predict the potential of players on the field instead of on the screen. 
 
+## Report
+The final report can be found
+[here](https://github.com/UBC-MDS/fifa-potential/tree/main/src/high-potential-fifa-prediction-report.html).
+
 ## Dependencies
 
 - [Docker](https://www.docker.com/) is a container used 
