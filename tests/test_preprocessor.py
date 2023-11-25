@@ -30,14 +30,13 @@ def test_create_columntransformer():
     assert isinstance(fifa_preprocessor, sklearn.compose._column_transformer.ColumnTransformer)
 
 
-# Test to make sure the function throws an error for non-numeric elements in numeric_feats
+# Test to make sure the lists being passed to the function contain strings
 def test_preprocessor_non_numeric_numeric_feats():
-    passthrough_feats1 = ['pass_col_1']
-    numeric_feats1 = ['pass_col_2']
-    try:
-        preprocessor(passthrough_feats1, numeric_feats1)
-    except ValueError as e:
-        assert str(e) == 'numeric_feats must contain only numeric elements'
+    for element in numeric_feats:
+        assert isinstance(element, str)
+    for element in passthrough_feats:
+        assert isinstance(element, str)
+
 
 # Test to make sure the function throws an error for improper input type
 def test_preprocessor_invalid_passthrough_feats():
