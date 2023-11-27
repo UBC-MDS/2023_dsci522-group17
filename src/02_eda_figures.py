@@ -1,3 +1,5 @@
+# python src/02_eda_figures.py --dataset=data/processed/fifa_train.csv --target=potential
+
 import click
 import os
 import numpy as np
