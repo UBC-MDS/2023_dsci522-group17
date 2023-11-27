@@ -46,7 +46,7 @@ def plot_numeric_distributions(data, target, numeric_features=None, stack_order=
 
 
     # Creating the repeated altair plot
-    final_plots = alt.Chart(data).mark_bar(opacity=0.3).encode(
+    final_plots = alt.Chart(data).mark_area(opacity=0.3).encode(
         alt.X(alt.repeat()).type('quantitative').bin(maxbins=20),
         alt.Y('count()', stack=None).title('Frequency of Occurrence'),
         alt.Color(target).title(target).scale(scheme='viridis')

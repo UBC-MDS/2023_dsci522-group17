@@ -11,7 +11,9 @@ from plot_numeric_distributions import plot_numeric_distributions
 def main(dataset, target):
     """EDA plots"""
     # Exploratory data analysis and visualizing numeric feature distributions across classes
+    dataset = pd.read_csv(dataset).set_index('Unnamed: 0')
     eda_plots = plot_numeric_distributions(dataset, target)
-    eda_plots
+    eda_plots.save('results/eda_plots.png')
+    
 if __name__ == '__main__':
     main()
