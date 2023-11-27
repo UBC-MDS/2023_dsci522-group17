@@ -57,4 +57,4 @@ def test_csv_valid():
 
 
 def test_cleanup():
-    os.remove(os.path.join("data", "this_is_a_csv_file.csv"))
+    os.remove(os.path.join("data", "raw", "this_is_a_csv_file.csv"))

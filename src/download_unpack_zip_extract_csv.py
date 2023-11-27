@@ -43,7 +43,7 @@ def download_unpack_zip_extract_csv(url, filename, path="data"):
         f.write(request.content)
 
     with zipfile.ZipFile(os.path.join("data", "tmp.zip"), "r") as zip_file:
-        zip_file.extract(filename, path=path)
+        zip_file.extract(filename, path="data/raw")
     os.remove(os.path.join(path, "tmp.zip"))
 
-    return pd.read_csv(os.path.join(path, filename), encoding="utf-8", low_memory=False)
+    return pd.read_csv(os.path.join("data", "raw", filename), encoding="utf-8", low_memory=False)
