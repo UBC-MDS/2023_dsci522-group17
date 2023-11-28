@@ -60,6 +60,5 @@ def main(scaled_train, scaled_test):
     score = pd.DataFrame(index = ['SVC'], data = {"Test Score": score})
     score.to_csv('results/test_score.csv')
 
-
 if __name__ == '__main__':
     main()
