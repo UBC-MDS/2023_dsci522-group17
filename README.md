@@ -23,6 +23,7 @@ to manage the software dependencies for this project.
 The Docker image used for this project is based on the
 `quay.io/jupyter/minimal-notebook` image.
 Additional dependencies are specified in the [Dockerfile](Dockerfile).
+- Pythonic dependencies are described in the [environment.yaml](environment.yaml)
 
 ## Usage
 
@@ -33,7 +34,7 @@ and launch Docker on your computer.
 
 2. Clone this GitHub repository.
 
-#### Running the analysis
+### Running the analysis using Docker Compose
 
 1. Navigate to the root of this project on your computer using the
    command line and enter the following command:
@@ -46,15 +47,37 @@ docker compose up
 `http://127.0.0.1:8888/lab?token=` 
 Copy and paste that URL into your browser.
 
-3. To run the analysis, open `src/high-potential-fifa-prediction-report.ipynb`
-in the Jupyter Lab window you just launched, and under the "Kernel" menu
-click "Restart Kernel and Run All Cells..."
+3. To replicate the analysis, open a terminal window within Jupyter Lab and run: 
+
+```bash
+conda activate fifa-potential
+bash run.sh
+```
+
+4. To view the analysis, open `doc/high-potential-fifa-prediction-report.ipynb`... [ADD DETAILS HERE]
+
 
 #### Clean up
 
 1. To shut down the container and clean up the resources, 
-type `Ctrl` + `C` in the terminal
+press `Ctrl` + `C` in the terminal
 where you launched the container, and then type `docker compose rm`
+
+### Running the analysis locally 
+
+1. Install local dependencies
+2. To replicate the analysis, navigate to the root of this project on your computer using the command line and enter the following commands:
+
+```bash
+conda activate fifa-potential
+bash run.sh
+```
+
+3. To view the analysis, open `doc/high-potential-fifa-prediction-report.ipynb`... [ADD DETAILS HERE] 
+
+
+#### Clean up
+1. To remove all modified files, execute `git restore .` at the root of the repository to revert all local changes to the repository
 
 ## Developer notes
 
