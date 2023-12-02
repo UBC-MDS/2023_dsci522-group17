@@ -9,24 +9,23 @@ from sklearn.model_selection import train_test_split
 @click.option("--filename", type=str)
 def main(url, filename):
     """
-    Loads analysis data from a URL zip file, extracts URL, cleans and
-    minimally processes data
+    Loads analysis data from a URL zip file, extract URL, clean and
+    minimally processes data. Export test/train splits to csv
 
     Parameters
     ----------
     url : string
         a string corresponding to a url of a zip folder
     filename : string
-        a string corresponding to the `.csv` fle desired for 
+        a string corresponding to the `.csv` fle desired for
         analysis
 
     Outputs
     -------
-    fifa_train.csv
+    data/processed/fifa_train.csv
         train split of unpacked data from selected file in CSV format
-    fifa_test.csv
+    data/processed/fifa_test.csv
         test split of unpacked data from selected file in CSV format
-    Note: Output files are written to `data/processed`
 
     Example
     -------
