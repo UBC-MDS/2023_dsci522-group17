@@ -51,8 +51,8 @@ def plot_numeric_distributions(data, target, numeric_features=None, stack_order=
         alt.Y('count()', stack=None).title('Frequency of Occurrence'),
         alt.Color(target).title(target).scale(scheme='viridis')
     ).properties(
-        width = 150,
-        height = 150
+        width = 125,
+        height = 125
     ).repeat(
         numeric_features,
         columns = 4
