@@ -27,7 +27,7 @@ def main(scaled_train):
     Parameters
     ----------
     scaled_train : string
-        relative filepath to the scaled_train dataset
+        relative filepath to the scaled train dataset
 
     Outputs
     -------
