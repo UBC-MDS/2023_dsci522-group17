@@ -18,7 +18,16 @@ warnings.filterwarnings('ignore', category=FutureWarning)
 @click.command()
 @click.option('--scaled_train', type=str)
 def main(scaled_train):
-    """Simple program that adds two numbers."""
+    """Simple program that adds two numbers.
+    
+    Parameters
+    ----------
+
+
+    Returns
+    -------
+
+    """
     # Separating target from other features
     scaled_train = pd.read_csv(scaled_train, index_col=0)
     X_train = scaled_train.drop(columns = ['potential'])

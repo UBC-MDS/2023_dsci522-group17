@@ -11,7 +11,16 @@ from plot_numeric_distributions import plot_numeric_distributions
 @click.option('--dataset', type=str)
 @click.option('--target', type=str)
 def main(dataset, target):
-    """EDA plots"""
+    """EDA plots
+    
+    Parameters
+    ----------
+
+
+    Returns
+    -------
+
+    """
     # Exploratory data analysis and visualizing numeric feature distributions across classes
     dataset = pd.read_csv(dataset).set_index('Unnamed: 0')
     eda_plots = plot_numeric_distributions(dataset, target)

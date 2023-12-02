@@ -10,7 +10,16 @@ from sklearn.model_selection import RandomizedSearchCV
 @click.option('--scaled_train', type=str)
 @click.option('--scaled_test', type=str)
 def main(scaled_train, scaled_test):
-    """Conduct hyperparameter optimization and score on test data"""
+    """Conduct hyperparameter optimization and score on test data
+    
+    Parameters
+    ----------
+
+
+    Returns
+    -------
+
+    """
     # Hyperparamater optimization for RBF SVM model as that model performed best
     
     # Separating target from other features

@@ -9,7 +9,17 @@ from sklearn.preprocessing import StandardScaler
 @click.option('--train', type=str)
 @click.option('--test', type=str)
 def main(train, test):
-    """Preprocessing"""
+    """Preprocessing
+    
+    
+    Parameters
+    ----------
+
+
+    Returns
+    -------
+
+    """
     # Pre-processing
     passthrough_feats = ["potential"]
     numeric_feats = ['value_eur', 'wage_eur', 'age', 'height_cm', 'weight_kg',
