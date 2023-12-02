@@ -10,7 +10,7 @@ from sklearn.model_selection import train_test_split
 def main(url, filename):
     """
     Loads analysis data from a URL zip file, extracts URL, cleans and
-    processes data
+    minimally processes data
 
     Parameters
     ----------
