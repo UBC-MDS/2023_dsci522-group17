@@ -102,10 +102,12 @@ More details about the test suite can be found in the
 [`tests`](tests) directory.
 
 ### Building the report
-Run the following in the root directory to build the report
+Run the following in the root directory to build the report and copy it to the `docs/` directory.
 ```
 jupyter-book build --all report
+y |  cp -r -f report/_build/html/* docs
 ```
+Note that this will not rerun the analysis itself, simply update the rendered report. 
 
 
 ## Licenses
