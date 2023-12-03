@@ -14,7 +14,7 @@ However, we believe there is still significant room for improvement before the m
 
 ## Report
 The final report can be found
-[[here](https://github.com/UBC-MDS/fifa-potential/tree/main/src/high-potential-fifa-prediction-report.html).](https://rawcdn.githack.com/UBC-MDS/fifa-potential/ef3dc1b5a39b4ef2ac1e77db7bbb2aaaa60a4ff1/docs/high-potential-fifa-prediction-report.html)
+[here](https://rawcdn.githack.com/UBC-MDS/fifa-potential/ef3dc1b5a39b4ef2ac1e77db7bbb2aaaa60a4ff1/docs/high-potential-fifa-prediction-report.html)
 
 ## Dependencies
 
