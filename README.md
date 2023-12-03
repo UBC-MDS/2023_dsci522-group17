@@ -14,7 +14,7 @@ However, we believe there is still significant room for improvement before the m
 
 ## Report
 The final report can be found
-[here](https://rawcdn.githack.com/UBC-MDS/fifa-potential/ef3dc1b5a39b4ef2ac1e77db7bbb2aaaa60a4ff1/docs/high-potential-fifa-prediction-report.html)
+[here](https://ubc-mds.github.io/fifa-potential/high-potential-fifa-prediction-report.html)
 
 ## Dependencies
 
@@ -54,14 +54,21 @@ conda activate fifa-potential
 bash run.sh
 ```
 
-4. To view the analysis, open `doc/high-potential-fifa-prediction-report.ipynb`... [ADD DETAILS HERE]
+3. To view the analysis, run the following in the root directory to rebuild the report and copy it to the `docs/` directory.
+```
+jupyter-book build --all report
+y |  cp -r -f report/_build/html/* docs
+```
 
 
 #### Clean up
 
 1. To shut down the container and clean up the resources, 
 press `Ctrl` + `C` in the terminal
-where you launched the container, and then type `docker compose rm`
+where you launched the container, and then type 
+```
+docker compose rm
+```
 
 ### Running the analysis locally 
 
@@ -73,7 +80,11 @@ conda activate fifa-potential
 bash run.sh
 ```
 
-3. To view the analysis, open `doc/high-potential-fifa-prediction-report.ipynb`... [ADD DETAILS HERE] 
+3. To view the analysis, run the following in the root directory to rebuild the report and copy it to the `docs/` directory.
+```
+jupyter-book build --all report
+y |  cp -r -f report/_build/html/* docs
+```
 
 
 #### Clean up
@@ -109,6 +120,34 @@ y |  cp -r -f report/_build/html/* docs
 ```
 Note that this will not rerun the analysis itself, simply update the rendered report. 
 
+### Calling individual scripts
+Refer to [run.sh](run.sh) for execution order. Commands and recommended parameters are listed below as required for Milestone 3: 
+
+```bash
+# Load, clean, and tidy data 
+python src/01_load_clean_tidy.py \
+    --url=https://sports-statistics.com/database/fifa/fifa_2022_datasets.zip \
+    --filename=players_22.csv
+
+# Generate EDA figures
+python src/02_eda_figures.py \
+    --dataset=data/processed/fifa_train.csv \
+    --target=potential
+
+# Preprocess data 
+python src/03_preprocessing.py \
+    --train=data/processed/fifa_train.csv \
+    --test=data/processed/fifa_test.csv
+
+# Complete model selection 
+python src/04_model_selection.py \
+    --scaled_train=data/processed/scaled_fifa_train.csv
+
+# Complete hyperparameter tuning
+python src/05_hyperparameter_scoring.py \
+    --scaled_train=data/processed/scaled_fifa_train.csv \
+    --scaled_test=data/processed/scaled_fifa_test.csv
+```
 
 ## Licenses
 This report is licensed under a Attribution-NonCommercial-NoDerivs 4.0 International (CC BY-NC-ND 4.0 Deed) License with the repository itself under a MIT License. The underlying dataset is licensed by a CC0 1.0 Universal (Public Domain) license. 
