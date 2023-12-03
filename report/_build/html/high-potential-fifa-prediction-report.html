@@ -386,60 +386,49 @@ document.write(`
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
+      <th>dummy</th>
+      <th>Decision Tree</th>
+      <th>KNN</th>
+      <th>RBF SVM</th>
+      <th>Naive Bayes</th>
+      <th>Logistic Regression</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Unnamed: 0</th>
-      <td>fit_time</td>
-      <td>score_time</td>
-      <td>test_score</td>
-      <td>train_score</td>
-    </tr>
-    <tr>
-      <th>dummy</th>
+      <th>fit_time</th>
       <td>0.002 (+/- 0.000)</td>
-      <td>0.001 (+/- 0.000)</td>
-      <td>0.276 (+/- 0.000)</td>
-      <td>0.276 (+/- 0.000)</td>
-    </tr>
-    <tr>
-      <th>Decision Tree</th>
       <td>0.037 (+/- 0.001)</td>
-      <td>0.001 (+/- 0.000)</td>
-      <td>0.822 (+/- 0.005)</td>
-      <td>1.000 (+/- 0.000)</td>
-    </tr>
-    <tr>
-      <th>KNN</th>
       <td>0.007 (+/- 0.000)</td>
-      <td>0.125 (+/- 0.002)</td>
-      <td>0.567 (+/- 0.005)</td>
-      <td>0.728 (+/- 0.004)</td>
-    </tr>
-    <tr>
-      <th>RBF SVM</th>
       <td>1.181 (+/- 0.021)</td>
-      <td>0.613 (+/- 0.005)</td>
-      <td>0.751 (+/- 0.009)</td>
-      <td>0.786 (+/- 0.002)</td>
-    </tr>
-    <tr>
-      <th>Naive Bayes</th>
       <td>0.006 (+/- 0.000)</td>
-      <td>0.001 (+/- 0.000)</td>
-      <td>0.570 (+/- 0.007)</td>
-      <td>0.570 (+/- 0.002)</td>
+      <td>0.058 (+/- 0.004)</td>
     </tr>
     <tr>
-      <th>Logistic Regression</th>
-      <td>0.058 (+/- 0.004)</td>
+      <th>score_time</th>
       <td>0.001 (+/- 0.000)</td>
+      <td>0.001 (+/- 0.000)</td>
+      <td>0.125 (+/- 0.002)</td>
+      <td>0.613 (+/- 0.005)</td>
+      <td>0.001 (+/- 0.000)</td>
+      <td>0.001 (+/- 0.000)</td>
+    </tr>
+    <tr>
+      <th>test_score</th>
+      <td>0.276 (+/- 0.000)</td>
+      <td>0.822 (+/- 0.005)</td>
+      <td>0.567 (+/- 0.005)</td>
+      <td>0.751 (+/- 0.009)</td>
+      <td>0.570 (+/- 0.007)</td>
       <td>0.705 (+/- 0.005)</td>
+    </tr>
+    <tr>
+      <th>train_score</th>
+      <td>0.276 (+/- 0.000)</td>
+      <td>1.000 (+/- 0.000)</td>
+      <td>0.728 (+/- 0.004)</td>
+      <td>0.786 (+/- 0.002)</td>
+      <td>0.570 (+/- 0.002)</td>
       <td>0.709 (+/- 0.002)</td>
     </tr>
   </tbody>
@@ -449,7 +438,7 @@ document.write(`
 </figcaption>
 </figure>
 <p>We observe that the optimal hyperparameter values are <code class="docutils literal notranslate"><span class="pre">C:</span> <span class="pre">100</span></code> and <code class="docutils literal notranslate"><span class="pre">Gamma:</span> <span class="pre">0.01</span></code>. The training accuracy obtained with these <code class="docutils literal notranslate"><span class="pre">hyperparameters</span></code> is 0.786.</p>
-<figure class="align-default" id="hyperparameter-rankings-df" style="width: 300px">
+<figure class="align-default" id="hyperparameter-rankings-df" style="width: 750px">
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -468,64 +457,66 @@ document.write(`
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>rank_test_score</th>
-      <th>mean_test_score</th>
-      <th>mean_train_score</th>
-      <th>param_svc__C</th>
-      <th>param_svc__gamma</th>
-      <th>mean_fit_time</th>
+      <th>Mean test score:</th>
+      <th>Mean train score:</th>
+      <th>Value of C:</th>
+      <th>Value of gamma:</th>
+      <th>Mean fit time:</th>
+    </tr>
+    <tr>
+      <th>Rank test score</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>0.811787</td>
-      <td>0.836351</td>
+      <th>1</th>
+      <td>0.812</td>
+      <td>0.836</td>
       <td>100</td>
       <td>0.010</td>
-      <td>1.519819</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>0.779678</td>
-      <td>0.948357</td>
-      <td>100</td>
-      <td>0.100</td>
-      <td>2.956846</td>
+      <td>1.520</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
-      <td>0.778169</td>
-      <td>0.876069</td>
-      <td>10</td>
+      <td>0.780</td>
+      <td>0.948</td>
+      <td>100</td>
       <td>0.100</td>
-      <td>1.615262</td>
+      <td>2.957</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
-      <td>0.772132</td>
-      <td>0.785127</td>
+      <td>0.778</td>
+      <td>0.876</td>
       <td>10</td>
-      <td>0.010</td>
-      <td>1.542626</td>
+      <td>0.100</td>
+      <td>1.615</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>0.752095</td>
-      <td>0.759369</td>
+      <td>0.772</td>
+      <td>0.785</td>
+      <td>10</td>
+      <td>0.010</td>
+      <td>1.543</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.752</td>
+      <td>0.759</td>
       <td>100</td>
       <td>0.001</td>
-      <td>1.706897</td>
+      <td>1.707</td>
     </tr>
   </tbody>
 </table>
 </div></div><figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">The top x performing models from hyperparameter optimization.</span><a class="headerlink" href="#hyperparameter-rankings-df" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">The top 5 performing models from hyperparameter optimization.</span><a class="headerlink" href="#hyperparameter-rankings-df" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>And the accuracy of our model is 0.837, i.e. it predicted quite well when run on the test data. However, before being implemented by coaches and scouts to evaluate players on the field, there are still some improvements to be made. These are explored in the next section.</p>
@@ -548,15 +539,13 @@ document.write(`
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Unnamed: 0</th>
-      <th>Test Score</th>
+      <th>SVC</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>SVC</td>
-      <td>0.808918</td>
+      <th>Test Score</th>
+      <td>0.809</td>
     </tr>
   </tbody>
 </table>
