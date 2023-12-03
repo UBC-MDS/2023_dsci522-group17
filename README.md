@@ -57,7 +57,7 @@ bash run.sh
 3. To view the analysis, run the following in the root directory to rebuild the report and copy it to the `docs/` directory.
 ```
 jupyter-book build --all report
-y |  cp -r -f report/_build/html/* docs
+yes | cp -r -f report/_build/html/* docs
 ```
 
 
@@ -83,7 +83,7 @@ bash run.sh
 3. To view the analysis, run the following in the root directory to rebuild the report and copy it to the `docs/` directory.
 ```
 jupyter-book build --all report
-y |  cp -r -f report/_build/html/* docs
+yes |  cp -r -f report/_build/html/* docs
 ```
 
 

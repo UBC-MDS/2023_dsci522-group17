@@ -315,10 +315,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-and-discussion">Results and Discussion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-improvements">Further Improvements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-improvements">Further Improvements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -338,11 +336,11 @@ document.write(`
 </div>
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
-<p>We attempt to construct a classification model using an RBF SVM classifier algorithm which uses FIFA22 player attribute ratings to classify players’ potential with target classes “Low”, “Medium”, “Good”, and “Great”. The classes are split on the quartiles of the distribution of the FIFA22 potential ratings. Our model performed reasonably well on the test data with an accuracy score of 0.84, with hyperparamters C: 100 &amp; Gamma: 0.01. However, we believe there is still significant room for improvement before the model is ready to be utilized by soccer clubs and coaching staffs to predict the potential of players on the field instead of on the screen.</p>
+<p>We attempt to construct a classification model using an RBF SVM classifier algorithm which uses FIFA22 player attribute ratings to classify players’ potential with target classes “Low”, “Medium”, “Good”, and “Great”. The classes are split on the quartiles of the distribution of the FIFA22 potential ratings. Our model performed reasonably well on the test data with an accuracy score of <span class="pasted-text">0.809</span>, with hyperparamters C: <span class="pasted-text">100.0</span> &amp; Gamma: <span class="pasted-text">0.010</span>. However, we believe there is still significant room for improvement before the model is ready to be utilized by soccer clubs and coaching staffs to predict the potential of players on the field instead of on the screen.</p>
 </section>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
-<p>One of the most challenging jobs for sports coaches is deciding which players will make a positive addition to the team <span id="id1">[<a class="reference internal" href="#id9" title="How to evaluate soccer players. URL: https://ussoccerplayers.com/soccer-training-tips/evaluating-players (visited on 2023-12-03)."><em>How to evaluate soccer players</em>, n.d.</a>]</span>. A key step in evaluating which players to add to a team is predicting how their skill level will change over time. We can think of this in terms of their potential. FIFA22 by EA sports is the world’s leading soccer video game. For each year’s release, they rate players’ skill levels in various aspects of the game such as shooting, passing, defending, etc. and give each player an overall rating as well as a rating of each player’s potential.</p>
+<p>One of the most challenging jobs for sports coaches is deciding which players will make a positive addition to the team <span id="id1">[<a class="reference internal" href="#id9" title="USNSTPA. How to evaluate soccer players. URL: https://ussoccerplayers.com/soccer-training-tips/evaluating-players (visited on 2023-12-03).">USNSTPA, n.d.</a>]</span>. A key step in evaluating which players to add to a team is predicting how their skill level will change over time. We can think of this in terms of their potential. FIFA22 by EA sports is the world’s leading soccer video game. For each year’s release, they rate players’ skill levels in various aspects of the game such as shooting, passing, defending, etc. and give each player an overall rating as well as a rating of each player’s potential.</p>
 <p>Here we ask if we can use a machine learning model to classify players by their potential given their attribute ratings. We have binned the continuous potential variable into four classes for the purpose of evaluating player talent as “Low”, “Medium”, “Good”, and “Great”. Answering this question is important as developing a model that can accurately predict the potential of players on FIFA22 could then be applied to the evaluation of soccer players in real life and be employed by coaches and scouts to help soccer clubs make good decisions on which players to add to the team and which to let go.</p>
 </section>
 <section id="methods">
@@ -437,7 +435,7 @@ document.write(`
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text">Time to fit and score as well as test and train scores for each model we looked at.</span><a class="headerlink" href="#model-cross-val-scores-df" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>We observe that the optimal hyperparameter values are <code class="docutils literal notranslate"><span class="pre">C:</span> <span class="pre">100</span></code> and <code class="docutils literal notranslate"><span class="pre">Gamma:</span> <span class="pre">0.01</span></code>. The training accuracy obtained with these <code class="docutils literal notranslate"><span class="pre">hyperparameters</span></code> is 0.786.</p>
+<p>We observe that the optimal hyperparameter values are C: <span class="pasted-text">100.0</span> and Gamma: <span class="pasted-text">0.010</span>. The cross-validation accuracy obtained with these hyperparameters is <span class="pasted-text">0.812</span>.</p>
 <figure class="align-default" id="hyperparameter-rankings-df" style="width: 750px">
 <div class="output text_html"><div>
 <style scoped>
@@ -519,7 +517,7 @@ document.write(`
 <p><span class="caption-number">Fig. 3 </span><span class="caption-text">The top 5 performing models from hyperparameter optimization.</span><a class="headerlink" href="#hyperparameter-rankings-df" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>And the accuracy of our model is 0.837, i.e. it predicted quite well when run on the test data. However, before being implemented by coaches and scouts to evaluate players on the field, there are still some improvements to be made. These are explored in the next section.</p>
+<p>And the accuracy of our model is <span class="pasted-text">0.809</span>, i.e. it predicted quite well when run on the test data with low overfitting. However, before being implemented by coaches and scouts to evaluate players on the field, there are still some improvements to be made. These are explored in the next section.</p>
 <figure class="align-default" id="test-score-df" style="width: 300px">
 <div class="output text_html"><div>
 <style scoped>
@@ -557,10 +555,16 @@ document.write(`
 <section id="further-improvements">
 <h2>Further Improvements<a class="headerlink" href="#further-improvements" title="Permalink to this heading">#</a></h2>
 <p>To improve our model further in the future, with the hopes of better predicting the potential of a player, there are a few improvements that can be made. First of all, we could include the growth of a player over the years, based on their performance in games. This would somewhat lead to us having a time-series dataset which we can use to create a feature that captures the growth of a player over the years. Second, we would include the effort that the player puts into their training. This can be a beneficial improvement that could lead to better predictive power in our model. Finally, we could include the reporting of the probability estimates of the prediction of the classes in for the <code class="docutils literal notranslate"><span class="pre">potential</span></code> of a player, so that a player scout knows with how much certainty a player might be classified as a <code class="docutils literal notranslate"><span class="pre">Great</span></code> player (for example).</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <div class="docutils container" id="id8">
 <dl class="citation">
-<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id1">how</a></span></dt>
-<dd><p>How to evaluate soccer players. URL: <a class="reference external" href="https://ussoccerplayers.com/soccer-training-tips/evaluating-players">https://ussoccerplayers.com/soccer-training-tips/evaluating-players</a> (visited on 2023-12-03).</p>
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id1">USN</a></span></dt>
+<dd><p>USNSTPA. How to evaluate soccer players. URL: <a class="reference external" href="https://ussoccerplayers.com/soccer-training-tips/evaluating-players">https://ussoccerplayers.com/soccer-training-tips/evaluating-players</a> (visited on 2023-12-03).</p>
+</dd>
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id2">VRD09</a></span></dt>
+<dd><p>Guido Van Rossum and Fred L Drake. <em>Introduction to python 3: python documentation manual part 1</em>. CreateSpace, 2009.</p>
 </dd>
 <dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id3">HMVDW+20</a></span></dt>
 <dd><p>Charles R Harris, K Jarrod Millman, Stéfan J Van Der Walt, Ralf Gommers, Pauli Virtanen, David Cournapeau, Eric Wieser, Julian Taylor, Sebastian Berg, Nathaniel J Smith, and others. Array programming with numpy. <em>Nature</em>, 585(7825):357–362, 2020.</p>
@@ -568,30 +572,17 @@ document.write(`
 <dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id4">M+10</a></span></dt>
 <dd><p>Wes McKinney and others. Data structures for statistical computing in python. In <em>Proceedings of the 9th Python in Science Conference</em>, volume 445, 51–56. Austin, TX, 2010.</p>
 </dd>
-<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id6">PVG+11</a></span></dt>
-<dd><p>Fabian Pedregosa, Gaël Varoquaux, Alexandre Gramfort, Vincent Michel, Bertrand Thirion, Olivier Grisel, Mathieu Blondel, Peter Prettenhofer, Ron Weiss, Vincent Dubourg, and others. Scikit-learn: machine learning in python. <em>the Journal of machine Learning research</em>, 12:2825–2830, 2011.</p>
-</dd>
-<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id2">VRD09</a></span></dt>
-<dd><p>Guido Van Rossum and Fred L Drake. <em>Introduction to python 3: python documentation manual part 1</em>. CreateSpace, 2009.</p>
-</dd>
 <dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id5">VGH+18</a></span></dt>
 <dd><p>Jacob VanderPlas, Brian Granger, Jeffrey Heer, Dominik Moritz, Kanit Wongsuphasawat, Arvind Satyanarayan, Eitan Lees, Ilia Timofeev, Ben Welsh, and Scott Sievert. Altair: interactive statistical visualizations for python. <em>Journal of open source software</em>, 3(32):1057, 2018.</p>
+</dd>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id6">PVG+11</a></span></dt>
+<dd><p>Fabian Pedregosa, Gaël Varoquaux, Alexandre Gramfort, Vincent Michel, Bertrand Thirion, Olivier Grisel, Mathieu Blondel, Peter Prettenhofer, Ron Weiss, Vincent Dubourg, and others. Scikit-learn: machine learning in python. <em>the Journal of machine Learning research</em>, 12:2825–2830, 2011.</p>
 </dd>
 <dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id7">VGO+20</a></span></dt>
 <dd><p>Pauli Virtanen, Ralf Gommers, Travis E Oliphant, Matt Haberland, Tyler Reddy, David Cournapeau, Evgeni Burovski, Pearu Peterson, Warren Weckesser, Jonathan Bright, and others. Scipy 1.0: fundamental algorithms for scientific computing in python. <em>Nature methods</em>, 17(3):261–272, 2020.</p>
 </dd>
 </dl>
 </div>
-<section id="references">
-<h3>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h3>
-<p>US National Soccer Players. (2023). (rep.). How to evaluate soccer players. Retrieved from <a class="reference external" href="https://ussoccerplayers.com/soccer-training-tips/evaluating-players">https://ussoccerplayers.com/soccer-training-tips/evaluating-players</a>.</p>
-<p>Harris, C.R. et al., 2020. Array programming with NumPy. Nature, 585, pp.357–362.</p>
-<p>McKinney, Wes. 2010. “Data Structures for Statistical Computing in Python.” In Proceedings of the 9th Python in Science Conference, edited by Stéfan van der Walt and Jarrod Millman, 51–56.</p>
-<p>Pauli Virtanen, et al., and SciPy 1.0 Contributors. (2020) SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python. Nature Methods, 17(3), 261-272.</p>
-<p>Pedregosa, F. et al., 2011. Scikit-learn: Machine learning in Python. Journal of machine learning research, 12(Oct), pp.2825–2830.</p>
-<p>VanderPlas et al., (2018). Altair: Interactive Statistical Visualizations for Python. Journal of Open Source Software, 3(32), 1057, <a class="reference external" href="https://doi.org/10.21105/joss.01057">https://doi.org/10.21105/joss.01057</a></p>
-<p>Van Rossum, Guido, and Fred L. Drake. 2009. Python 3 Reference Manual. Scotts Valley, CA: CreateSpace.</p>
-</section>
 </section>
 </section>
 
@@ -648,10 +639,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-and-discussion">Results and Discussion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-improvements">Further Improvements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-improvements">Further Improvements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 
