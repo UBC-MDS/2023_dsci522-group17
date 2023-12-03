@@ -1,0 +1,11 @@
+
+title: "Predicting high-potential FIFA players using individual performance data"
+author: "Jake Barnabe, Simon Frew, Merete Lutz, Waleed Mahmood"
+date: "2023-12-02"
+sphinx:
+  config:
+    bibtex_reference_style: author_year
+execute:
+  execute_notebooks: force 
+bibtex_bibfiles:
+    - references.bib

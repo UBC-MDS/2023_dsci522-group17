@@ -14,7 +14,7 @@ However, we believe there is still significant room for improvement before the m
 
 ## Report
 The final report can be found
-[here](https://github.com/UBC-MDS/fifa-potential/tree/main/src/high-potential-fifa-prediction-report.html).
+[here](https://rawcdn.githack.com/UBC-MDS/fifa-potential/ef3dc1b5a39b4ef2ac1e77db7bbb2aaaa60a4ff1/docs/high-potential-fifa-prediction-report.html)
 
 ## Dependencies
 
@@ -81,7 +81,7 @@ bash run.sh
 
 ## Developer notes
 
-#### Adding a new dependency
+### Adding a new dependency
 
 1. Add the dependency to the `Dockerfile` file on a new branch.
 
@@ -96,10 +96,18 @@ bash run.sh
 
 5. Send a pull request to merge the changes into the `main` branch. 
 
-#### Running the tests
+### Running the tests
 Tests are run using the `pytest` command in the root of the project.
 More details about the test suite can be found in the 
 [`tests`](tests) directory.
+
+### Building the report
+Run the following in the root directory to build the report and copy it to the `docs/` directory.
+```
+jupyter-book build --all report
+y |  cp -r -f report/_build/html/* docs
+```
+Note that this will not rerun the analysis itself, simply update the rendered report. 
 
 
 ## Licenses
