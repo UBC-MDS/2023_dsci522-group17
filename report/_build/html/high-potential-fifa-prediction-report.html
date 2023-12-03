@@ -360,15 +360,14 @@ document.write(`
 <section id="results-and-discussion">
 <h2>Results and Discussion<a class="headerlink" href="#results-and-discussion" title="Permalink to this heading">#</a></h2>
 <p>To look at whether each of the predictors might be useful to predict the class of the target variable <code class="docutils literal notranslate"><span class="pre">potential</span></code>, we plotted the distributions of each predictor from the training data set and coloured the distribution by class (Low: blue, medium: orange, Good: red, Great: green). These distributions are drawn up after we have scaled all of the features in the training dataset. In doing this, we can see that most of the distributions, for the features we have filtered to keep, have overlap but their spreads and centers are different, except for <code class="docutils literal notranslate"><span class="pre">height_cm</span></code> and <code class="docutils literal notranslate"><span class="pre">weight_kg</span></code> - which overlap almost completely across the different classes of <code class="docutils literal notranslate"><span class="pre">potential</span></code> - and <code class="docutils literal notranslate"><span class="pre">value_eur</span></code> - which has no distribution for classes other than <code class="docutils literal notranslate"><span class="pre">great</span></code> for <code class="docutils literal notranslate"><span class="pre">potential</span></code>. We chose to not omit these features from our model as they could still prove informative through interactions.</p>
-<p>Through our model selection process, we were able to determine that the best model in our case would be an RBF SVM model. To determine the values for the hyperparameters that would give us the best estimator, we used the hyperparameter optimization method <code class="docutils literal notranslate"><span class="pre">RandomizedSearchCV</span></code> to perform a 5-fold cross validation, so that we are able to get the most suitable hyperparamters to obtain the best possible model to estimate and predict the class for <code class="docutils literal notranslate"><span class="pre">potential</span></code>.</p>
-<p>We observe that the optimal hyperparameter values are <code class="docutils literal notranslate"><span class="pre">C:</span> <span class="pre">100</span></code> and <code class="docutils literal notranslate"><span class="pre">Gamma:</span> <span class="pre">0.01</span></code>. The training accuracy obtained with these <code class="docutils literal notranslate"><span class="pre">hyperparameters</span></code> is 0.786. And the accuracy of our model is 0.837, i.e. it predicted quite well when run on the test data. However, before being implemented by coaches and scouts to evaluate players on the field, there are still some improvements to be made. These are explored in the next section.</p>
 <figure class="align-default" id="feature-bars-by-class">
-<a class="reference internal image-reference" href="_images/eda_plots.png"><img alt="_images/eda_plots.png" src="_images/eda_plots.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/eda_plots.png"><img alt="_images/eda_plots.png" src="_images/eda_plots.png" style="width: 900px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Comparison of the distributions of numeric predictors in the training set between the 4 levels of potential.</span><a class="headerlink" href="#feature-bars-by-class" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="model-cross-val-scores-df" style="width: 300px">
+<p>Through our model selection process, we were able to determine that the best model in our case would be an RBF SVM model. To determine the values for the hyperparameters that would give us the best estimator, we used the hyperparameter optimization method <code class="docutils literal notranslate"><span class="pre">RandomizedSearchCV</span></code> to perform a 5-fold cross validation, so that we are able to get the most suitable hyperparamters to obtain the best possible model to estimate and predict the class for <code class="docutils literal notranslate"><span class="pre">potential</span></code>.</p>
+<figure class="align-default" id="model-cross-val-scores-df" style="width: 750px">
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -387,54 +386,60 @@ document.write(`
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Unnamed: 0</th>
-      <th>dummy</th>
-      <th>Decision Tree</th>
-      <th>KNN</th>
-      <th>RBF SVM</th>
-      <th>Naive Bayes</th>
-      <th>Logistic Regression</th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
+      <th>Unnamed: 0</th>
       <td>fit_time</td>
-      <td>0.002 (+/- 0.000)</td>
-      <td>0.037 (+/- 0.001)</td>
-      <td>0.007 (+/- 0.000)</td>
-      <td>1.181 (+/- 0.021)</td>
-      <td>0.006 (+/- 0.000)</td>
-      <td>0.058 (+/- 0.004)</td>
-    </tr>
-    <tr>
-      <th>1</th>
       <td>score_time</td>
-      <td>0.001 (+/- 0.000)</td>
-      <td>0.001 (+/- 0.000)</td>
-      <td>0.125 (+/- 0.002)</td>
-      <td>0.613 (+/- 0.005)</td>
-      <td>0.001 (+/- 0.000)</td>
-      <td>0.001 (+/- 0.000)</td>
-    </tr>
-    <tr>
-      <th>2</th>
       <td>test_score</td>
-      <td>0.276 (+/- 0.000)</td>
-      <td>0.822 (+/- 0.005)</td>
-      <td>0.567 (+/- 0.005)</td>
-      <td>0.751 (+/- 0.009)</td>
-      <td>0.570 (+/- 0.007)</td>
-      <td>0.705 (+/- 0.005)</td>
+      <td>train_score</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>train_score</td>
+      <th>dummy</th>
+      <td>0.002 (+/- 0.000)</td>
+      <td>0.001 (+/- 0.000)</td>
       <td>0.276 (+/- 0.000)</td>
+      <td>0.276 (+/- 0.000)</td>
+    </tr>
+    <tr>
+      <th>Decision Tree</th>
+      <td>0.037 (+/- 0.001)</td>
+      <td>0.001 (+/- 0.000)</td>
+      <td>0.822 (+/- 0.005)</td>
       <td>1.000 (+/- 0.000)</td>
+    </tr>
+    <tr>
+      <th>KNN</th>
+      <td>0.007 (+/- 0.000)</td>
+      <td>0.125 (+/- 0.002)</td>
+      <td>0.567 (+/- 0.005)</td>
       <td>0.728 (+/- 0.004)</td>
+    </tr>
+    <tr>
+      <th>RBF SVM</th>
+      <td>1.181 (+/- 0.021)</td>
+      <td>0.613 (+/- 0.005)</td>
+      <td>0.751 (+/- 0.009)</td>
       <td>0.786 (+/- 0.002)</td>
+    </tr>
+    <tr>
+      <th>Naive Bayes</th>
+      <td>0.006 (+/- 0.000)</td>
+      <td>0.001 (+/- 0.000)</td>
+      <td>0.570 (+/- 0.007)</td>
       <td>0.570 (+/- 0.002)</td>
+    </tr>
+    <tr>
+      <th>Logistic Regression</th>
+      <td>0.058 (+/- 0.004)</td>
+      <td>0.001 (+/- 0.000)</td>
+      <td>0.705 (+/- 0.005)</td>
       <td>0.709 (+/- 0.002)</td>
     </tr>
   </tbody>
@@ -443,6 +448,7 @@ document.write(`
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text">Time to fit and score as well as test and train scores for each model we looked at.</span><a class="headerlink" href="#model-cross-val-scores-df" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+<p>We observe that the optimal hyperparameter values are <code class="docutils literal notranslate"><span class="pre">C:</span> <span class="pre">100</span></code> and <code class="docutils literal notranslate"><span class="pre">Gamma:</span> <span class="pre">0.01</span></code>. The training accuracy obtained with these <code class="docutils literal notranslate"><span class="pre">hyperparameters</span></code> is 0.786.</p>
 <figure class="align-default" id="hyperparameter-rankings-df" style="width: 300px">
 <div class="output text_html"><div>
 <style scoped>
@@ -522,6 +528,7 @@ document.write(`
 <p><span class="caption-number">Fig. 3 </span><span class="caption-text">The top x performing models from hyperparameter optimization.</span><a class="headerlink" href="#hyperparameter-rankings-df" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+<p>And the accuracy of our model is 0.837, i.e. it predicted quite well when run on the test data. However, before being implemented by coaches and scouts to evaluate players on the field, there are still some improvements to be made. These are explored in the next section.</p>
 <figure class="align-default" id="test-score-df" style="width: 300px">
 <div class="output text_html"><div>
 <style scoped>
