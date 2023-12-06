@@ -35,7 +35,8 @@ report/_build/html/index.html : report/high-potential-fifa-prediction-report.ipy
 	scaled \
 	results/model_cross_val_scores.csv \
 	outputs
-		jupyter-book build report
+		jupyter-book build --all report
+		y |  cp -r -f report/_build/html/* docs
 
 clean:
 	rm -f data/raw/players_22.csv
