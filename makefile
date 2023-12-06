@@ -1,4 +1,4 @@
-
+all : report/_build/html/index.html
 
 # Downloading, unzipping, extracting and splitting data into test and train datasets
 data/raw/players_22.csv : src/01_load_clean_tidy.py
@@ -29,6 +29,13 @@ outputs : src/05_hyperparameter_scoring.py data/processed/scaled_fifa_train.csv 
     --scaled_train=data/processed/scaled_fifa_train.csv \
     --scaled_test=data/processed/scaled_fifa_test.csv
 
+report/_build/html/index.html : report/high-potential-fifa-prediction-report.ipynb \
+	data/raw/players_22.csv \
+	results/eda_plots.png \
+	scaled \
+	results/model_cross_val_scores.csv \
+	outputs
+		jupyter-book build report
 
 clean:
 	rm -f data/raw/players_22.csv
