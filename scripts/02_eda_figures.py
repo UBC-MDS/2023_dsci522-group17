@@ -23,7 +23,7 @@ def main(dataset, target):
 
     Outputs
     -------
-    results/eda_plots.png
+    results/figures/eda_plots.png
         export of dataset visualizations
 
     Example
@@ -36,7 +36,7 @@ def main(dataset, target):
     dataset = pd.read_csv(dataset).set_index("Unnamed: 0")
 
     eda_plots = plot_numeric_distributions(dataset, target)
-    eda_plots.save("results/eda_plots.png")
+    eda_plots.save("results/figures/eda_plots.png")
 
 
 if __name__ == "__main__":
