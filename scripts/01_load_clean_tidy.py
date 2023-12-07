@@ -1,6 +1,9 @@
 import click
 import pandas as pd
-from download_unpack_zip_extract_csv import download_unpack_zip_extract_csv
+import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from src.download_unpack_zip_extract_csv import download_unpack_zip_extract_csv
 from sklearn.model_selection import train_test_split
 
 

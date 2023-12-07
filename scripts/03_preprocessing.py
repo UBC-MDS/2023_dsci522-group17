@@ -1,6 +1,9 @@
 import click
 import pandas as pd
-from preprocessor import preprocessor
+import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from src.preprocessor import preprocessor
 
 
 @click.command()

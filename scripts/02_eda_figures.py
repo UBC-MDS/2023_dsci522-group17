@@ -1,6 +1,9 @@
 import click
 import pandas as pd
-from plot_numeric_distributions import plot_numeric_distributions
+import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from src.plot_numeric_distributions import plot_numeric_distributions
 
 
 @click.command()
