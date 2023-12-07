@@ -26,12 +26,12 @@ def main(scaled_train, scaled_test):
 
     Outputs
     -------
-    results/hyperparameter_rankings.csv
+    results/tables/hyperparameter_rankings.csv
         top 5 results of hyperparameter tuning including parameters and
         performance
-    results/test_score.csv
+    results/tables/test_score.csv
         performance results for the best model evaluated on test data
-    results/best_model.pickle
+    results/models/best_model.pickle
         fitted best model pickled for export
 
     Example
@@ -83,19 +83,19 @@ def main(scaled_train, scaled_test):
         .iloc[:5]
     )
 
-    rankings.to_csv("results/hyperparameter_rankings.csv")
+    rankings.to_csv("results/tables/hyperparameter_rankings.csv")
 
     # Get best_model
     best_model = random_search.best_estimator_
 
     # Export model to pickle
-    with open("results/best_model.pickle", "wb") as f:
+    with open("results/models/best_model.pickle", "wb") as f:
         pickle.dump(best_model, f)
 
     # Score
     score = best_model.score(X_test, y_test)
     score = pd.DataFrame(index=["SVC"], data={"Test Score": score})
-    score.to_csv("results/test_score.csv")
+    score.to_csv("results/tables/test_score.csv")
 
 
 if __name__ == "__main__":
