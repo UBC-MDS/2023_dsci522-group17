@@ -37,7 +37,8 @@ results/tables/hyperparameter_rankings.csv results/tables/test_score.csv results
 report/_build/html/index.html : report/high-potential-fifa-prediction-report.ipynb results/tables/model_cross_val_scores.csv results/tables/hyperparameter_rankings.csv results/tables/test_score.csv results/figures/eda_plots.png
 		jupyter-book build --all report
 		cp -rf report/_build/html/* docs
-		if [ ! -f ".nojekyll" ]; then touch docs/.nojekyll; fi # above line referenced from https://github.com/ttimbers/breast_cancer_predictor_py/blob/main/Makefile
+		if [ ! -f ".nojekyll" ]; then touch docs/.nojekyll; fi 
+		# above line referenced from https://github.com/ttimbers/breast_cancer_predictor_py/blob/main/Makefile
 
 # clean repository
 clean:
