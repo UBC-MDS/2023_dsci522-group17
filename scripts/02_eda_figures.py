@@ -1,6 +1,9 @@
 import click
 import pandas as pd
-from plot_numeric_distributions import plot_numeric_distributions
+import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from src.plot_numeric_distributions import plot_numeric_distributions
 
 
 @click.command()
@@ -20,7 +23,7 @@ def main(dataset, target):
 
     Outputs
     -------
-    results/eda_plots.png
+    results/figures/eda_plots.png
         export of dataset visualizations
 
     Example
@@ -33,7 +36,7 @@ def main(dataset, target):
     dataset = pd.read_csv(dataset).set_index("Unnamed: 0")
 
     eda_plots = plot_numeric_distributions(dataset, target)
-    eda_plots.save("results/eda_plots.png")
+    eda_plots.save("results/figures/eda_plots.png")
 
 
 if __name__ == "__main__":

@@ -9,7 +9,11 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 from sklearn.naive_bayes import GaussianNB
 from sklearn.linear_model import LogisticRegression
-from cross_val_by_model import cross_val_by_model
+
+import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from src.cross_val_by_model import cross_val_by_model
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 
@@ -31,7 +35,7 @@ def main(scaled_train):
 
     Outputs
     -------
-    results/model_cross_val_scores.csv
+    results/tables/model_cross_val_scores.csv
         aggregated cross validation results for various models
 
     Example
@@ -58,7 +62,7 @@ def main(scaled_train):
 
     # Conducting cross validation for each possible model
     results = cross_val_by_model(models, X_train, y_train)
-    results.to_csv("results/model_cross_val_scores.csv")
+    results.to_csv("results/tables/model_cross_val_scores.csv")
 
 
 if __name__ == "__main__":
