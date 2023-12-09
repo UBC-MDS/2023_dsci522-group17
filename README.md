@@ -157,7 +157,7 @@ Third parties wishing to:
 1) Contribute to the software.
 2) Report issues or problems with the software.
 3) Seek support.
-Please refer to `contributing.md`
+Please refer to `CONTRIBUTING.md`
 
 ## Licenses
 This report is licensed under a Attribution-NonCommercial-NoDerivs 4.0 International (CC BY-NC-ND 4.0 Deed) License with the repository itself under a MIT License. The underlying dataset is licensed by a CC0 1.0 Universal (Public Domain) license. 
