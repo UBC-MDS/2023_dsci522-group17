@@ -76,6 +76,11 @@ docker compose rm
 ### Running the analysis locally 
 
 1. Install local dependencies
+
+```bash
+conda env create --file environment.yaml
+```
+
 2. To replicate the analysis, navigate to the root of this project on your computer using the command line and enter the following commands:
 
 ```bash
