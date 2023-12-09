@@ -34,7 +34,7 @@ and launch Docker on your computer.
 
 2. Clone this GitHub repository.
 
-3. Navigate to the root of this project before beginning the project.
+3. Navigate to the root of this project before beginning the project analysis.
  
 
 ### Running the analysis using Docker Compose
