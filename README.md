@@ -34,7 +34,11 @@ and launch Docker on your computer.
 
 2. Clone this GitHub repository.
 
+3. Navigate to the root of this project before beginning the project analysis.
+ 
+
 ### Running the analysis using Docker Compose
+#### Method 1
 
 1. Navigate to the root of this project on your computer using the
    command line and enter the following command:
@@ -69,10 +73,26 @@ where you launched the container, and then type
 ```
 docker compose rm
 ```
+#### Method 2
+
+1. Run the following command from the root directory of this project, reset the repository to its original clean state:
+```bash
+docker-compose run --rm fifa-potential make clean
+```
+
+2. Run the following command from the root directory of this project, in order to replicate the analysis:
+```bash
+docker-compose run --rm fifa-potential make all
+```
 
 ### Running the analysis locally 
 
 1. Install local dependencies
+
+```bash
+conda env create --file environment.yaml
+```
+
 2. To replicate the analysis, navigate to the root of this project on your computer using the command line and enter the following commands:
 
 ```bash
@@ -148,6 +168,13 @@ python src/05_hyperparameter_scoring.py \
     --scaled_train=data/processed/scaled_fifa_train.csv \
     --scaled_test=data/processed/scaled_fifa_test.csv
 ```
+
+## Contributors
+Third parties wishing to:
+1) Contribute to the software.
+2) Report issues or problems with the software.
+3) Seek support.
+Please refer to `CONTRIBUTING.md`
 
 ## Licenses
 This report is licensed under a Attribution-NonCommercial-NoDerivs 4.0 International (CC BY-NC-ND 4.0 Deed) License with the repository itself under a MIT License. The underlying dataset is licensed by a CC0 1.0 Universal (Public Domain) license. 
