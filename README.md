@@ -38,6 +38,7 @@ and launch Docker on your computer.
  
 
 ### Running the analysis using Docker Compose
+#### Method 1
 
 1. Navigate to the root of this project on your computer using the
    command line and enter the following command:
@@ -71,6 +72,17 @@ press `Ctrl` + `C` in the terminal
 where you launched the container, and then type 
 ```
 docker compose rm
+```
+#### Method 2
+
+1. Run the following command from the root directory of this project, reset the repository to its original clean state:
+```bash
+docker-compose run --rm fifa-potential make clean
+```
+
+2. Run the following command from the root directory of this project, in order to replicate the analysis:
+```bash
+docker-compose run --rm fifa-potential make all
 ```
 
 ### Running the analysis locally 
